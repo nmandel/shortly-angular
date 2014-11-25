@@ -1,7 +1,10 @@
 <div id='container'>
-  <input type='text'>
-  <button>Shorten</button>
+  <input ng-model='website' type='text'>
+  <button ng-click="addLink(website)">Shorten</button>
   <a href="#/links"><strong>Links</strong></a>
+  <!-- <div>{{ link.url }}</div> -->
+  <br><br>
+  <a href="{{ link.url }}">{{ link.url }}</a>
 </div>
 
 
