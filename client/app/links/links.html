@@ -1,7 +1,9 @@
 <div id='container'>
   <a href="#/shorten"><strong>Go back</strong></a>
-  <br><br><br>
-  <div ng-repeat="link in data.links | orderBy:'visits':true">
+  <br><br>
+  <input ng-model="search.webAddress">
+  <br>
+  <div ng-repeat="link in data.links | orderBy:'visits':true | filter: search.webAddress">
     <a href="{{link.url}}">{{link.url}}</a>
     <br>
     <a href="{{displayShortenedLink(link)}}">{{displayShortenedLink(link)}}</a>
