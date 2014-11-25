@@ -1,6 +1,11 @@
 <div id='container'>
   <a href="#/shorten"><strong>Go back</strong></a>
-  <ul>
-    <!-- <li ng-repeat=""></li> -->
-  </ul>
+  <br><br><br>
+  <div ng-repeat="link in data.links">
+    <a href="{{link.url}}">{{link.url}}</a>
+    <br>
+    <a href="{{displayShortenedLink(link)}}">{{displayShortenedLink(link)}}</a>
+    <br>
+    <br>
+  </div>
 </div>
