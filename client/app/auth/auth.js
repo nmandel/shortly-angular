@@ -7,6 +7,14 @@ angular.module('shortly.auth', [])
   $scope.user = {};
 
   $scope.signin = function () {
+    if (!$scope.user.username || !$scope.user.password) {
+      return;
+    }
+    if ($scope.user.username.indexOf(' ') > -1) {
+      console.log("Your username or password is bad! You should think about what you've done.");
+      return;
+    }
+
     Auth.signin($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
@@ -18,6 +26,14 @@ angular.module('shortly.auth', [])
   };
 
   $scope.signup = function () {
+    if (!$scope.user.username || !$scope.user.password) {
+      return;
+    }
+    if ($scope.user.username.indexOf(' ') > -1) {
+      console.log("Your username or password is bad! You should think about what you've done.");
+      return;
+    }
+
     Auth.signup($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
