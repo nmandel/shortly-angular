@@ -1,10 +1,11 @@
 <div id='container'>
   <a href="#/shorten"><strong>Go back</strong></a>
   <br><br><br>
-  <div ng-repeat="link in data.links">
+  <div ng-repeat="link in data.links | orderBy:'visits':true">
     <a href="{{link.url}}">{{link.url}}</a>
     <br>
     <a href="{{displayShortenedLink(link)}}">{{displayShortenedLink(link)}}</a>
+    <span>&nbsp&nbsp&nbsp&nbsp Visits: {{link.visits}}</span>
     <br>
     <br>
   </div>
